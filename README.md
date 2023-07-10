@@ -1,11 +1,8 @@
-# Remotion video
+# Remotion video using Panda CSS
 
 <p align="center">
   <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.gif">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
+    <video src="./out/video.mp4" width="600" height="338" controls="controls" autoplay="autoplay" loop="loop" muted="muted" />
   </a>
 </p>
 
@@ -16,25 +13,25 @@ Welcome to your Remotion project!
 **Install Dependencies**
 
 ```console
-npm i
+pnpm i
 ```
 
 **Start Preview**
 
 ```console
-npm start
+pnpm start
 ```
 
 **Render video**
 
 ```console
-npm run build
+pnpm run build
 ```
 
 **Upgrade Remotion**
 
 ```console
-npm run upgrade
+pnpm run upgrade
 ```
 
 ## Docs

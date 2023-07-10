@@ -1,6 +1,6 @@
 import {Composition} from 'remotion';
 import {HelloPanda, myCompSchema} from './HelloPanda';
-import {Logo, myCompSchema2} from './HelloPanda/Logo';
+import {Logo} from './HelloPanda/Logo';
 
 import './style.css';
 
@@ -33,7 +33,6 @@ export const RemotionRoot: React.FC = () => {
 				fps={30}
 				width={1920}
 				height={1080}
-				schema={myCompSchema2}
 				defaultProps={{
 					logoColor1: '#91dAE2' as const,
 					logoColor2: '#86A8E7' as const,
