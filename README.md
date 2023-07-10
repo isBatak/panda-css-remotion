@@ -1,10 +1,6 @@
 # Remotion video using Panda CSS
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <video src="./out/video.mp4" width="600" height="338" controls="controls" autoplay="autoplay" loop="loop" muted="muted" />
-  </a>
-</p>
+https://github.com/isBatak/panda-css-remotion/assets/4128883/9afe39b7-3621-4101-8a38-80363befa03f
 
 Welcome to your Remotion project!
 
