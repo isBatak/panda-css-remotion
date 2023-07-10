@@ -1,34 +1,27 @@
 import React from 'react';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {FONT_FAMILY} from './constants';
-
-const title: React.CSSProperties = {
-	fontFamily: FONT_FAMILY,
-	fontWeight: 'bold',
-	fontSize: 100,
-	textAlign: 'center',
-	position: 'absolute',
-	bottom: 160,
-	width: '100%',
-};
-
-const word: React.CSSProperties = {
-	marginLeft: 10,
-	marginRight: 10,
-	display: 'inline-block',
-};
+import {css} from '../../styled-system/css';
 
 export const Title: React.FC<{
 	titleText: string;
-	titleColor: string;
-}> = ({titleText, titleColor}) => {
+}> = ({titleText}) => {
 	const videoConfig = useVideoConfig();
 	const frame = useCurrentFrame();
 
 	const words = titleText.split(' ');
 
 	return (
-		<h1 style={title}>
+		<h1
+			className={css({
+				fontFamily: 'body',
+				fontWeight: 'bold',
+				fontSize: 100,
+				textAlign: 'center',
+				position: 'absolute',
+				bottom: 160,
+				w: 'full',
+			})}
+		>
 			{words.map((t, i) => {
 				const delay = i * 5;
 
@@ -43,9 +36,12 @@ export const Title: React.FC<{
 				return (
 					<span
 						key={t}
+						className={css({
+							color: 'black',
+							mx: 3,
+							display: 'inline-block',
+						})}
 						style={{
-							...word,
-							color: titleColor,
 							transform: `scale(${scale})`,
 						}}
 					>

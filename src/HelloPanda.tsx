@@ -1,29 +1,23 @@
+import {Sequence} from 'remotion'
 import {spring} from 'remotion';
 import {
 	AbsoluteFill,
 	interpolate,
-	Sequence,
 	useCurrentFrame,
 	useVideoConfig,
 } from 'remotion';
-import {Logo} from './HelloWorld/Logo';
-import {Subtitle} from './HelloWorld/Subtitle';
-import {Title} from './HelloWorld/Title';
+import {Logo} from './HelloPanda/Logo';
+import {Subtitle} from './HelloPanda/Subtitle';
+import {Title} from './HelloPanda/Title';
 import {z} from 'zod';
-import {zColor} from '@remotion/zod-types';
+import { css } from '../styled-system/css';
 
 export const myCompSchema = z.object({
 	titleText: z.string(),
-	titleColor: zColor(),
-	logoColor1: zColor(),
-	logoColor2: zColor(),
 });
 
-export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
+export const HelloPanda : React.FC<z.infer<typeof myCompSchema>> = ({
 	titleText: propOne,
-	titleColor: propTwo,
-	logoColor1,
-	logoColor2,
 }) => {
 	const frame = useCurrentFrame();
 	const {durationInFrames, fps} = useVideoConfig();
@@ -57,14 +51,14 @@ export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
 
 	// A <AbsoluteFill> is just a absolutely positioned <div>!
 	return (
-		<AbsoluteFill style={{backgroundColor: 'white'}}>
+		<AbsoluteFill className={css({ bg: 'primary ' })}>
 			<AbsoluteFill style={{opacity}}>
 				<AbsoluteFill style={{transform: `translateY(${logoTranslation}px)`}}>
-					<Logo logoColor1={logoColor1} logoColor2={logoColor2} />
+					<Logo />
 				</AbsoluteFill>
 				{/* Sequences can shift the time for its children! */}
 				<Sequence from={35}>
-					<Title titleText={propOne} titleColor={propTwo} />
+					<Title titleText={propOne} />
 				</Sequence>
 				{/* The subtitle will only enter on the 75th frame. */}
 				<Sequence from={75}>
